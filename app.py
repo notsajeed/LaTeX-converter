@@ -15,7 +15,28 @@ def index():
 
 @app.route('/convert', methods=['POST'])
 def convert():
-    latex_code = request.form['latex']
+    raw_code = request.form['latex']
+
+    if r'\documentclass' not in raw_code:
+        # Auto-wrap in minimal LaTeX document
+        latex_code = f"""
+    \\documentclass{{article}}
+    \\usepackage{{amsmath}}
+    \\usepackage[utf8]{{inputenc}}
+    \\usepackage{{geometry}}
+    \\geometry{{margin=1in}}
+
+    \\begin{{document}}
+
+    \\[
+    {raw_code}
+    \\]
+
+    \\end{{document}}
+    """
+    else:
+        latex_code = raw_code
+
     session_id = str(uuid.uuid4())
     tex_filename = f"{session_id}.tex"
     pdf_filename = f"{session_id}.pdf"
@@ -68,3 +89,4 @@ def download_file(filename):
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
+
