@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LaTeX to PDF Converter</title>
+</head>
+<body>
+    <h1>📄 LaTeX to PDF</h1>
+
+    <form method="POST" action="/convert">
+        <textarea name="latex" rows="20" cols="80" placeholder="Enter LaTeX code here..."></textarea><br>
+        <button type="submit">Convert to PDF</button>
+    </form>
+
+    {% if filename %}
+        <h3>✅ PDF generated successfully!</h3>
+        <a href="{{ url_for('download_file', filename=filename) }}">
+            <button>⬇️ Download PDF</button>
+        </a>
+    {% endif %}
+</body>
+</html>
