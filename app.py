@@ -3,6 +3,10 @@ import subprocess
 import uuid
 import os
 
+subprocess.run(['apt-get', 'update'])
+subprocess.run(['apt-get', 'install', '-y', 'texlive-latex-base'])
+
+
 app = Flask(__name__)
 OUTPUT_DIR = "output"
 
