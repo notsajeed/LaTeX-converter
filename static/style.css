@@ -1,15 +1,180 @@
+/* === Base Styling === */
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     text-align: center;
-    padding: 20px;
+    padding: 50px;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
 }
+
+/* === Heading === */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #5589dd;
+    /* text-shadow: 0 0 10px #7184e288; */
+}
+
+/* === Form Box Styling === */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 8px 32px 0 rgba(16, 20, 66, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* === Text Area Styling === */
 textarea {
     width: 90%;
     max-width: 800px;
-    font-family: monospace;
+    height: 300px;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #555;
+    background-color: #121212;
+    color: #ffffff;
+    resize: vertical;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+textarea:focus {
+    outline: none;
+    border: 1px solid #3c249c;
+    box-shadow: 0 0 10px #00f7ff55;
+}
+
+/* === Button Styling === */
+button {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-family: 'Fira Code', monospace;
+    border-radius: 8px;
+    color: white;
+    background: linear-gradient(145deg, #3a3aff, #2b2bb8);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #3a3aff55;
+}
+button:hover {
+    background: linear-gradient(145deg, #2b2bb8, #1a1a88);
+    box-shadow: 0 0 15px #3a3aff88;
+}
+
+/* === Download Section === */
+h3 {
+    margin-top: 30px;
+    color: #284499;
+}
+a button {
+    margin-top: 10px;
+    background:  #284499;
+    color: #ffffff;
+    font-weight: bold;
+
+}
+a button:hover {
+    background:  #284499;
+    box-shadow: 0 0 10px  #284499;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    textarea {
+        height: 200px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    a button {
+        width: 100%;
+    }
+}
+
+
+.info-box {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 80, 0.3);
+    color: #d1eaff;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.7;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Headings inside info box */
+.info-box h2 {
+    color: #66aaff;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+/* Ordered list (steps) */
+.info-box ol {
+    padding-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box li {
     margin-bottom: 10px;
 }
-button {
-    padding: 10px 20px;
-    font-size: 16px;
+
+/* Tip or additional note */
+.info-box .tip {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-left: 4px solid #00ffcc;
+    background: rgba(0, 0, 0, 0.2);
+    color: #99ffe0;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 600px) {
+    .info-box {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .info-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .info-box ol {
+        padding-left: 20px;
+    }
 }

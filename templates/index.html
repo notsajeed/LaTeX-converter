@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>LaTeX to PDF Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
     <h1>📄 LaTeX to PDF</h1>
 
@@ -17,5 +20,22 @@
             <button>⬇️ Download PDF</button>
         </a>
     {% endif %}
+
+    <div class="info-box">
+    <h2>🧾 What is this?</h2>
+    <p>
+        This tool lets you convert raw <strong>LaTeX code</strong> into a clean and downloadable <strong>PDF document</strong> instantly.
+        Whether you're a student writing reports, a researcher creating equations, or just exploring LaTeX — this tool has you covered.
+    </p>
+
+    <h2>⚙️ How to Use</h2>
+    <ol>
+        <li>Paste your complete LaTeX code in the text area below.</li>
+        <li>Click the <strong>"Convert to PDF"</strong> button.</li>
+        <li>Wait a few seconds while your file is generated.</li>
+        <li>Download the generated PDF using the <strong>"Download PDF"</strong> button.</li>
+    </ol>
+</div>
+
 </body>
 </html>
